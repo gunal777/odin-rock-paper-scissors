@@ -43,7 +43,6 @@ function updateScoreDisplay() {
     playerSc.textContent = `Player Score: ${humanScore}`;
     computerSc.textContent = `Computer Score: ${computerScore}`;
     
-    // Show the score elements
     playerSc.style.display = "block";
     computerSc.style.display = "block";
 
