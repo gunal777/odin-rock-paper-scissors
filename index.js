@@ -46,5 +46,22 @@ function updateScoreDisplay() {
     // Show the score elements
     playerSc.style.display = "block";
     computerSc.style.display = "block";
+
+    if(humanScore == 5)
+    {
+        playerSc.style.display = "none";
+        computerSc.style.display = "none";
+        document.getElementById("result").textContent = `Player Score: ${humanScore} Player Wins!! the Game`;
+        humanScore = 0;
+        computerScore = 0;
+    }
+    else if(computerScore == 5)
+    {
+        playerSc.style.display = "none";
+        computerSc.style.display = "none";
+        document.getElementById("result").textContent = `Computer Score: ${computerScore} Computer Wins!! the Game`;
+        computerScore = 0;
+        humanScore = 0;
+    }
 }
 
