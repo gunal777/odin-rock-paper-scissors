@@ -1,0 +1,39 @@
+.buttons {
+    max-width: 400px;
+    max-height: 300px;
+    }
+
+.button {
+    display: flex;
+    gap: 150px;
+    justify-content: center;
+    align-items: center;
+}
+
+#computerScore {
+    display: none;
+}
+
+#playerScore {
+    display: none;
+}
+
+h2 {
+    text-align: center;
+}
+
+p {
+    text-align: center;
+    font-size: 18px;
+    margin: 10px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+.buttons:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}

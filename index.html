@@ -3,9 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link href="style.css" rel="stylesheet">
+    <title>Rock-Paper-Scissor Game</title>
 </head>
 <body>
+    <h2>Rock-Paper-Scissors</h2>
+    <div class="button">
+        <input type="image" src="pictures/rock.png" alt="Rock" value="rock" class="buttons" id="rock" onclick="getPlayerChoice()">
+        <input type="image" src="pictures/paper.png" alt="Paper" value="paper" class="buttons" id="paper" onclick="getPlayerChoice()">
+        <input type="image" src="pictures/scissor.png" alt="Scissor" value="scissor" class="buttons" id="scissor" onclick="getPlayerChoice()">
+    </div>
+    <p id="computerScore"></p>
+    <p id="playerScore"></p>
+    <p id="result"></p>
     <script src="index.js"></script>
 </body>
 </html>

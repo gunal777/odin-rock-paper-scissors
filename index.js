@@ -8,40 +8,43 @@ function getComputerChoice() {
 }
 
 function getPlayerChoice() {
-    while (true) {
-        const choice = (window.prompt("Enter Your Choice:\n 1: Rock \n 2: Paper \n 3: Scissor", 0) - 1);
-        if (choice < 0 || choice > 2) {
-            console.log("Please enter a valid choice");
-            continue;
-        }
-        else {
-            return choices[choice];
-        }
-    }
+    const clickedElement = event.target;
+    const playerChoice = clickedElement.value;
+    
+    console.log("Player chose:", playerChoice);
+
+    const computerChoice = getComputerChoice();
+    playRound(playerChoice, computerChoice);
 }
 
 function playRound(humanChoice, computerChoice) {
     if ((humanChoice === "rock" && computerChoice === "scissor") || (humanChoice === "paper" && computerChoice === "rock") || (humanChoice === "scissor" && computerChoice === "paper")) {
         humanScore++;
+        document.getElementById("result").textContent = `You Won! ${humanChoice} beats ${computerChoice}`;
         console.log(`You Won! ${humanChoice} beats ${computerChoice}`);
     }
     else if (humanChoice === computerChoice) {
         console.log(`Tie!`);
+        document.getElementById("result").textContent = `Tie! Both chose ${humanChoice}`;
     }
     else {
         computerScore++;
         console.log(`You Lost! ${computerChoice} beats ${humanChoice}`);
+        document.getElementById("result").textContent = `You Lost! ${computerChoice} beats ${humanChoice}`;
     }
+
+    updateScoreDisplay();
 }
 
-function playGame() {
-    for (let i = 0; i < 5; i++) {
-        const comp_choice = getComputerChoice();
-        const user_choice = getPlayerChoice();
-        playRound(user_choice, comp_choice);
-        console.log(`Player Score: ${humanScore}`);
-        console.log(`Computer Score: ${computerScore}`);
-    }
+function updateScoreDisplay() {
+    const playerSc = document.getElementById("playerScore");
+    const computerSc = document.getElementById("computerScore");
+    
+    playerSc.textContent = `Player Score: ${humanScore}`;
+    computerSc.textContent = `Computer Score: ${computerScore}`;
+    
+    // Show the score elements
+    playerSc.style.display = "block";
+    computerSc.style.display = "block";
 }
 
-playGame();
